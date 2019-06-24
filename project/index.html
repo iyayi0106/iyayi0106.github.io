@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NPS | National Parks Service</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        
+        <!-- Load the Views Objects-->
+        <script src="views/alertsView.js"></script> 
+        <script src="views/articlesView.js"></script> 
+        <script src="views/campgroundsView.js"></script> 
+        <script src="views/eventsView.js"></script> 
+        <script src="views/parksView.js"></script> 
+        <script src="views/visitorCentersView.js"></script> 
+        <script src="views/lessonPlansView.js"></script> 
+
+        <!-- Load the Model Objects-->
+        <script src="models/alertsObject.js"></script> 
+        <script src="models/articlesObject.js"></script> 
+        <script src="models/campgroundsObject.js"></script> 
+        <script src="models/eventsObject.js"></script> 
+        <script src="models/parksObject.js"></script> 
+        <script src="models/visitorCentersObject.js"></script> 
+        <script src="models/lessonPlansObject.js"></script>
+        <script src="models/searchObject.js"></script> 
+
+        <!-- Load the View Controller Objects-->
+        <script src="controllers/alertsVC.js"></script> 
+        <script src="controllers/articlesVC.js"></script> 
+        <script src="controllers/campgroundsVC.js"></script> 
+        <script src="controllers/eventsVC.js"></script> 
+        <script src="controllers/parksVC.js"></script> 
+        <script src="controllers/visitorCentersVC.js"></script>
+        <script src="controllers/lessonPlansVC.js"></script> 
+
+        <script src="appdelegate.js"></script> 
+        <link href="main.css" rel= "stylesheet">
+        
+    </head>
+    <body onload="loadFromButton('alerts','Alerts');">
+        <div id="menu">
+            <ul class="topmenubar">
+            <button onclick="loadFromButton('alerts','Alerts');">Alerts</button>
+            <button onclick="loadFromButton('articles','Articles');">Articles</button>
+            <button onclick="loadFromButton('events','Events');">Events</button>
+            <button onclick="loadFromButton('parks','Parks');">Parks</button>
+            <button onclick="loadFromButton('visitorcenters','Visitor Centers');">Visitor Centers</button>
+            <button onclick="loadFromButton('campgrounds','Campgrounds');">Campgrounds</button>
+            <button onclick="loadFromButton('lessonplans','Lesson Plans');">Lesson Plans</button>
+            <input id="search" type="text" placeholder="Search..." onkeydown="detectEnterKey();">
+            <button id="submit" type="button" onclick="searchAll();">Submit</button>
+            </ul>
+        </div>
+        <div id="mainTitle">Articles</div>
+        <div id="searchTitle"></div>
+        <div id="main" style="max-width: 800px;">
+                <div id="loading" class="box">
+                        <img src="images/loading.gif" alt="Loading" width="800px" height="600px">
+                        <div class="text">
+                            <h1>Loading...</h1>
+                        </div>
+                    </div>
+        </div>
+
+    </body>
+</html>
